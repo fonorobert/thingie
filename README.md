@@ -14,15 +14,19 @@ Thingie's peripherals:
 - 2 stepped knobs (an 8 step one and a 4 step one)
 
 Thingie also has 8 memory registers. 4 registers can store up to 16 ascii characters, the other 4 can store up to 16 integers between -9999 and 9999.
-The screen's two lines are the 9th and 10th, special registers. Only characters can be written to them and the information written to them can't be read back. Otherwise they are written to the same way as other memory registers. 
+The screen's two lines are the 9th and 10th, special registers. 
+Only characters can be written to them, otherwise they are written to the same way as other memory registers. 
 
 ## ThingieScript
 
 ThingieScript is a simple language that can:
 
 - read and write memory registers
+- read current state of input peripherals
 - perform basic arithmetic
 - compare two values (both character and integer, result of comparison will be 1 or 0)
-- control program flow with "goto"
+- control program flow with `goto`
 - use "if" for conditional code execution
-- wait for user input via peripherals
+- wait for set length of time before continuing execution
+
+Looping can be achieved with a combination of `if` and `goto`.
